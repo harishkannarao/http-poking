@@ -35,6 +35,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion")
     implementation("io.rest-assured:rest-assured:$restAssuredVersion")
     implementation("net.sourceforge.htmlunit:htmlunit:$htmlUnitVersion")
+    implementation("org.awaitility:awaitility-kotlin:$awaitilityVersion")
     testImplementation("junit:junit:$junitVersion")
 }
 
