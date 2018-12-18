@@ -1,10 +1,7 @@
 package com.harishkannarao.http.web
 
 import com.gargoylesoftware.htmlunit.WebClient
-import com.gargoylesoftware.htmlunit.html.DomElement
-import com.gargoylesoftware.htmlunit.html.HtmlDivision
-import com.gargoylesoftware.htmlunit.html.HtmlHeading1
-import com.gargoylesoftware.htmlunit.html.HtmlPage
+import com.gargoylesoftware.htmlunit.html.*
 import org.awaitility.kotlin.await
 import java.util.concurrent.TimeUnit
 
@@ -19,18 +16,20 @@ class ExamplePageWebClient(
     }
 
     private fun getDivElement(htmlPage: HtmlPage): HtmlDivision {
+        val divs = { htmlPage.querySelectorAll("div") }
         await.alias("Wait for div element")
                 .atMost(2L, TimeUnit.SECONDS)
                 .pollInterval(100L, TimeUnit.MILLISECONDS)
-                .until { htmlPage.querySelector<HtmlDivision>("div")?.isDisplayed }
-        return htmlPage.querySelectorAll("div").first() as HtmlDivision
+                .until { divs().firstOrNull()?.isDisplayed }
+        return divs().first() as HtmlDivision
     }
 
     private fun getH1Element(domElement: DomElement): HtmlHeading1 {
+        val headings = { domElement.querySelectorAll("h1") }
         await.alias("Wait for heading element")
                 .atMost(2L, TimeUnit.SECONDS)
                 .pollInterval(100L, TimeUnit.MILLISECONDS)
-                .until { domElement.querySelector<HtmlHeading1>("h1")?.isDisplayed }
-        return domElement.querySelectorAll("h1").first() as HtmlHeading1
+                .until { headings().firstOrNull()?.isDisplayed }
+        return headings().first() as HtmlHeading1
     }
 }
