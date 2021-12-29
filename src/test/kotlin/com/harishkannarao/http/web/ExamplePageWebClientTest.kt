@@ -1,8 +1,8 @@
 package com.harishkannarao.http.web
 
 import com.gargoylesoftware.htmlunit.WebClient
+import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.equalTo
-import org.junit.Assert.assertThat
 import org.junit.Test
 
 class ExamplePageWebClientTest {

@@ -13,7 +13,7 @@ class ExamplePageWebClient(
         val htmlPage = webClient.getPage<HtmlPage>("http://example.org/")
         val div = getDivElement(htmlPage)
         val heading = getH1Element(div)
-        return heading.asText()
+        return heading.textContent
     }
 
     private fun getDivElement(node: DomNode): HtmlDivision {
