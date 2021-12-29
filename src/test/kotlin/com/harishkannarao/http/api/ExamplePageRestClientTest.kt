@@ -2,7 +2,7 @@ package com.harishkannarao.http.api
 
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.equalTo
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 class ExamplePageRestClientTest {
 

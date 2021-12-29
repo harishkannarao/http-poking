@@ -34,7 +34,12 @@ dependencies {
     implementation("io.rest-assured:rest-assured:$restAssuredVersion")
     implementation("net.sourceforge.htmlunit:htmlunit:$htmlUnitVersion")
     implementation("org.awaitility:awaitility-kotlin:$awaitilityVersion")
-    testImplementation("junit:junit:$junitVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+}
+
+test {
+    useJUnitPlatform()
 }
 
 mainClassName = "com.harishkannarao.http.HttpClientApp"

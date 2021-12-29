@@ -3,7 +3,7 @@ package com.harishkannarao.http.web
 import com.gargoylesoftware.htmlunit.WebClient
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.equalTo
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 class ExamplePageWebClientTest {
     @Test
